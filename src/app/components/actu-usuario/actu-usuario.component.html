@@ -1,0 +1,52 @@
+<h1 class="text-center"> Actualizando Usuario </h1>
+<div class="container">
+    <form [formGroup]="form">
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <!-- <label for="inputEmail4">Identificación:</label> -->
+                <input type="hidden" name="id" class="form-control" id="inputEmail4" placeholder="Identificación" value="" formControlName="id">
+                <div *ngIf="form.get('id').invalid && form.get('id').touched" class="red">
+                    <span *ngIf="form.get('id').hasError('required')">Este campo es requerido</span>
+                    <span *ngIf="form.get('id').hasError('maxlength')">Máximo 8 caracteres</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="inputEmail4">Name:</label>
+                <input type="text" name="name" class="form-control" id="inputEmail4" placeholder="name" formControlName="name">
+            </div>
+        </div>
+
+
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="inputEmail4">Email:</label>
+                <input type="text" name="email" class="form-control" id="inputEmail4" placeholder="Email" formControlName="email">
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="inputEmail4">Phone:</label>
+                <input type="text" name="phone" class="form-control" id="inputEmail4" placeholder="Phone" formControlName="phone">
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="inputEmail4">photoName:</label>
+                <input type="text" name="photoName" class="form-control" id="inputEmail4" placeholder="photoName" formControlName="photoName">
+            </div>
+        </div>
+
+        <!-- <div class="form-row">
+        <div class="form-group col-md-6">
+            <label for="inputCity">City</label>
+            <input [(ngModel)]="numero" type="text" class="form-control" id="inputCity" name="numero">
+        </div>
+    </div> -->
+        <button type="button" class="btn btn-success" (click)="actualizando()" [disabled]="!form.valid">Crear Tabla</button>
+    </form>
+</div>

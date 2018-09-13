@@ -1,0 +1,29 @@
+<div class="container m-auto p-5">
+    <table class="table">
+        <thead>
+            <tr class="text-center">
+                <th scope="col"></th>
+                <th scope="col">Identificación</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Correo</th>
+                <th scope="col">Telefono</th>
+                <th scope="col">Buttons</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="text-center" *ngFor="let usuarios of usurios; let i=index">
+                <th scope="row"><i class="far fa-laugh-beam"></i></th>
+                <td>{{ usuarios.id }}</td>
+                <td>{{ usuarios.name }}</td>
+                <td>{{ usuarios.email }}</td>
+                <td>{{ usuarios.phone}}</td>
+                <td class="text-center">
+                    <button (click)="borrar(usuarios.id)" class="btn btn-outline-danger m-1"><i class="fas fa-trash-alt red"></i></button>
+                    <button [routerLink]="['/actualizar', usuarios.id ]" class="btn btn-outline-success m-1"><i class="fas fa-sync-alt"></i></button>
+                    <button [routerLink]="['/verUsuario', usuarios.id ]" class="btn btn-outline-primary m-1"><i class="fas fa-search"></i></button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
